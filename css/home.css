@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    /* background-color: var(--body-grey); */
+}
+
+body {
+    background-color: var(--body-grey);
+     
+}
+
+.container {
+
+    margin: 0 auto;
+    padding: 2rem 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.cards {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: box-shadow, transform 300ms ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  
+}
+
+.card .box {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 1rem;
+}
+
+.box1 h2 {
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    opacity: 0.2;
+    margin: 0 1rem 0 1rem;
+}
+
+
+.cards span,
+.cards>button {
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+.score span {
+    font-weight: 700;
+
+}
+
+.live {
+    color: var(--orange);
+}
+
+.live+button {
+    color: var(--blue);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+}
+
+/* hover */
+
+
+
+
+.card:hover {
+    box-shadow: 2px 2px 1px lightgray;
+    transform: translateY(-4px);
+}

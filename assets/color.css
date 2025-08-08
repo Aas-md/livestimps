@@ -1,0 +1,13 @@
+:root {
+  --primary: #1e90ff;
+  --primary-light : #1e40af;
+  --secondary: #ff6347;
+  --red : #ef4444;
+  --blue : #2563eb;
+  --orange : #f97316;
+  --grey : #4b5563;
+  --body-grey : #f9fafb;
+  --tx : #4b5563;
+  --tx-dark : #1f2937;
+  --tx-light : #6b7280;
+}
