@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,10 @@
     <link rel="stylesheet" href="../assets/color.css">
     <link rel="stylesheet" href="../css/score.css">
 </head>
+
 <body>
-    
-    
+
+
     <div class="container">
         <div class="matchInfo">
             <div class="box">
@@ -38,12 +40,145 @@
             <div class="box">
                 <span id="result">Required Run Rate: 8.34 (last 14.4 overs)</span>
             </div>
-            
+
         </div><!-- Match Info ends here -->
-        
-        
+
+        <div class="scoreBox">
+
+            <div class="teamScore">
+                <div class="first">
+                    <img src="../assets/india.png" alt="flag">
+                    <h2>India</h2>
+                </div>
+                <div class="second">
+                    <span class="scoreSpan">289/5 (50 overs)</span>
+                    <span class="runrateSpan">Run Rate: 5.78</span>
+                </div>
+            </div>
+            <div class="teamScore">
+                <div class="first">
+                    <img src="../assets/australia.png" alt="flag">
+                    <h2>Australia</h2>
+                </div>
+                <div class="second">
+                    <span class="scoreSpan">196/4 (35.2 overs)</span>
+                    <span class="runrateSpan">Run Rate: 5.55</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="third">
+                <div class="target">
+                    <span class="firstSpan">Target:</span>
+                    <span>290 runs from 50 overs</span>
+                </div>
+                <div class="target">
+                    <span class="firstSpan">Required Run Rate:</span>
+                    <span>8.34 (last 14.4 overs)</span>
+                </div>
+            </div>
+
+        </div> <!--  Score box ends here -->
+
+        <div class="scorecard-box">
+
+
+            <div class="tabs">
+                <button id="btn-batting" class="active disable">Batting</button>
+                <button id="btn-bowling" class="hidden disable">Bowling</button>
+
+            </div>
+
+            <div class="scorecard-section" id="batting-section">
+                <table>
+                    <tr>
+                        <th>Batsman</th>
+                        <th>R</th>
+                        <th>B</th>
+                        <th>4s</th>
+                        <th>6s</th>
+                        <th>SR</th>
+                        <th>Status</th>
+                    </tr>
+
+                    <div >
+                    <tr>
+                        <td>
+                            <div class="player-info">
+                                <div> <img src="../assets/india.png" alt="img" height="24px" width="24px"> </div>
+                                <div class="player-name"> <span>Virat Kohli</span> <span>Not Out</span></div>
+                            </div>
+                        </td>
+                        <td>107</td>
+                        <td>98</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>109.81</td>
+                        <td>Not out</td>
+
+                    </tr>
+                      <tr>
+                        <td>
+                            <div class="player-info">
+                                <div> <img src="../assets/india.png" alt="img" height="24" width="24"> </div>
+                                <div class="player-name"> <span >Virat Kohli</span> <span >Not Out</span></div>
+                            </div>
+                        </td>
+                        <td>107</td>
+                        <td>98</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>109.81</td>
+                        <td>Not out</td> 
+
+                    </tr>
+                    </div>
+                </table>
+            </div> <!-- batting section ends here -->
+
+            <div class="scorecard-section hide" id="bowling-section">
+                <table>
+                    <tr>
+                        <th>Bowler</th>
+                        <th>O</th>
+                        <th>M</th>
+                        <th>R</th>
+                        <th>W</th>
+                        <th>Econ</th>
+
+                        <th>6s</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="player-info">
+                                <div> <img src="../assets/australia.png" alt="img" > </div>
+
+                                <div class="player-name"> <span>Starc</span> <span>Left arm</span> </div>
+                            </div>
+                        </td>
+                        <td>107</td>
+                        <td>98</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>109.81</td>
+                        <td>Not out</td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+
+            </div>
+
+        </div><!--  Score card box ends here -->
 
     </div>
 
+
+    <script type="module" src="../js/score.js"></script>
+
 </body>
+
 </html>

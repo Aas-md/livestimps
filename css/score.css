@@ -7,16 +7,16 @@
 
 body {
     background-color: var(--body-grey);
-    
+
 }
 
-.container{
-    
+.container {
+
     padding: 1.5rem;
-    
+
 }
 
-.matchInfo{
+.matchInfo {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -24,31 +24,283 @@ body {
     justify-content: space-between;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
 
 }
 
-.matchInfo .box{
+.matchInfo .box {
 
     gap: 1rem;
 }
 
-.box > h1{
+.box>h1 {
     color: var(--tx-bold);
     font-size: 1.3rem;
     line-height: 2rem;
     font-weight: 700;
 }
 
-.box > span{
-     color: var(--tx);
+.box>span {
+    color: var(--tx);
 }
 
-.box > .first{
-    
-   
+.box>.first {
+
+
     font-weight: 500;
 }
 
-#result{
+#result {
     color: red;
 }
+
+/* score box starts here */
+
+.scoreBox img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.scoreBox {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 1rem;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.teamScore .first {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    justify-content: center;
+
+}
+
+.teamScore .second {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.teamScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first h2 {
+    color: var(--tx-bold);
+    font-weight: 700;
+}
+
+.second .scoreSpan {
+    color: var(--tx-bold);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.runrateSpan {
+    color: var(--tx-light);
+    line-height: 1.25rem;
+
+}
+
+.teamScore {
+    margin-bottom: 1rem;
+}
+
+hr {
+    color: var(--tx-light);
+    opacity: 0.2;
+}
+
+.target {
+    line-height: 1.25rem;
+
+}
+
+.target span {
+    color: var(--tx);
+    font-size: 0.85rem;
+}
+
+.target .firstSpan {
+
+    font-weight: 500;
+}
+
+.third {
+    margin-top: 1rem;
+}
+
+/* Score card section starts */
+
+.scorecard-box {
+    margin-bottom: 5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+
+}
+
+table td,
+table th {
+    text-align: start;
+}
+
+#battingSection {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.player-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.player-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.scorecard-section {
+    margin-top: 1rem;
+}
+
+
+
+/* table styling starts here */
+
+.scorecard-section table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0;
+}
+
+.scorecard-section th,
+.scorecard-section td {
+    padding: 8px 12px;
+}
+
+.scorecard-section td {
+    background: #fff;
+    /* border-bottom: 1px solid color-mix(in srgb, var(--tx-light), transparent 80%); */
+    border-top: 1px solid color-mix(in srgb, var(--tx-light), transparent 80%);
+
+
+}
+
+.scorecard-section th {
+    background: #f8f9fa;
+    text-align: left;
+}
+
+
+
+
+.scorecard-section td:first-child {
+
+    text-align: left;
+}
+
+.scorecard-section td:last-child,
+.scorecard-section th:last-child {
+    text-align: right;
+
+}
+
+
+
+table td:first-child {
+    border-left: 1px solid color-mix(in srgb, var(--tx-light), transparent 80%);
+}
+
+table td:last-child {
+    border-right: 1px solid color-mix(in srgb, var(--tx-light), transparent 80%);
+}
+
+table tr:last-child {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+th {
+    color: var(--tx-light);
+    font-weight: 500;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+td {
+    color: var(--tx);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+.player-info .player-name span:first-child {
+    color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+    font-weight: 500;
+    font-size: 1rem;
+    /* line-height: 1.25rem; */
+
+
+}
+
+.player-info img {
+
+    height: 24px;
+    width: 24px;
+
+}
+
+
+/* btn styling  */
+
+.hide {
+    display: none;
+ 
+}
+
+.disable{
+       border: none;
+    padding: 0.5rem 1rem;
+    color: black;
+    background-color: var(--bg);
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+}
+
+.active {
+
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-light);
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+}
+
+
+
+
+
+
+
