@@ -38,6 +38,11 @@ export function renderMatches(matches) {
     </div>
   `;
 
+      
+        card.addEventListener('click', () => {
+            window.location.href = `../public/score.html?id=${match.id}`;
+        });
+
         container.appendChild(card);
     });
 }
@@ -68,8 +73,8 @@ export function renderScoreData(data) {
     teamTwo.querySelector('.scoreSpan').textContent = data.team2.score;
     //button name rendering 
     let btnTeamOne = document.getElementById('btn-team1')
-     let btnTeamTwo = document.getElementById('btn-team2')
-     btnTeamOne.textContent = data.team1.name;
+    let btnTeamTwo = document.getElementById('btn-team2')
+    btnTeamOne.textContent = data.team1.name;
     btnTeamTwo.textContent = data.team2.name;
 
 
@@ -87,7 +92,7 @@ function renderScorecards(data) {
         <tr>
             <td>
                 <div class="player-info">
-                    <div><img src="../assets/australia.png" alt="img" height="24" width="24"></div>
+                    <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
                     <div class="player-name">
                         <span>${player.name}</span>
                         <span>${player.status}</span>
@@ -107,10 +112,10 @@ function renderScorecards(data) {
         <tr>
             <td>
                 <div class="player-info">
-                    <div><img src="../assets/australia.png" alt="img" height="24" width="24"></div>
+                    <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
                     <div class="player-name">
                         <span>${player.name}</span>
-                        <span>Right Arm Fast</span>
+                        <span>${player.action}</span>
                     </div>
                 </div>
             </td>
@@ -119,7 +124,7 @@ function renderScorecards(data) {
             <td>${player.run}</td>
             <td>${player.wicket}</td>
             <td>${player.eco}</td>
-            <td>${player.six}</td>
+            <td>${player.action}</td>
         </tr>
     `).join('');
 
@@ -127,7 +132,7 @@ function renderScorecards(data) {
         <tr>
             <td>
                 <div class="player-info">
-                    <div><img src="../assets/australia.png" alt="img" height="24" width="24"></div>
+                    <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
                     <div class="player-name">
                         <span>${player.name}</span>
                         <span>${player.status}</span>
@@ -148,10 +153,10 @@ function renderScorecards(data) {
         <tr>
             <td>
                 <div class="player-info">
-                    <div><img src="../assets/australia.png" alt="img" height="24" width="24"></div>
+                    <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
                     <div class="player-name">
                         <span>${player.name}</span>
-                        <span>Leg spin</span>
+                        <span>${player.action}</span>
                     </div>
                 </div>
             </td>
@@ -160,7 +165,7 @@ function renderScorecards(data) {
             <td>${player.run}</td>
             <td>${player.wicket}</td>
             <td>${player.eco}</td>
-            <td>${player.six}</td>
+            <td>${player.action}</td>
         </tr>
     `).join('');
 
@@ -178,3 +183,4 @@ function renderScorecards(data) {
 
 
 }
+

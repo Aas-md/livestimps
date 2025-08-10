@@ -28,8 +28,14 @@ setupBattingBowlingToggle(
 
 let btnMain = document.querySelector('#btnMain');
 
+function getMatchId() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id'); // this will be your match_id
+}
+
 btnMain.addEventListener("click", async () => {
-    let scoreData = await fetchScore()
+    let match_id = getMatchId()
+    let scoreData = await fetchScore(match_id)
    
 
     renderScoreData(scoreData)

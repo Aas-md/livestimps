@@ -19,9 +19,11 @@ export async function fetchLiveMatches() {
 
         let curr = {
 
+            id : match.id,
             status: match.matchEnded ? "COMPLETED" : match.matchStarted ? "LIVE" : "UPCOMING",
             team1: { name: match.teamInfo[0].shortname, flag: match.teamInfo[0].img, score: score1 },
             team2: { name: match.teamInfo[1].shortname, flag: match.teamInfo[1].img, score: score2 },
+            
 
         }
         console.log(match)
@@ -33,11 +35,12 @@ export async function fetchLiveMatches() {
 
 }
 
-export async function fetchScore() {
+export async function fetchScore(match_id) {
 
         const API_URL = "https://api.cricapi.com/v1/match_scorecard"
-    const API_KEY = "92155edc-b3f5-4aa7-a479-b1926bb976ed"
-    const match_id = 'a4380c28-53b1-4554-b537-59c6822ed787'
+    // const API_KEY = "92155edc-b3f5-4aa7-a479-b1926bb976ed"
+    const API_KEY = "ef25db60-2ba9-4013-9baa-379a453f48ec"
+    // const match_id = 'a4380c28-53b1-4554-b537-59c6822ed787'
    
 
     console.log("api hit succeshsgjh")
