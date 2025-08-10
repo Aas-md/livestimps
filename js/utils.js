@@ -89,6 +89,8 @@ function makeBowlingScorecard(bowlings = []) {
 
 
 
+
+
 // export function formatScore(score) {
 
 //     let formatedScore = `${score?.r ?? '0'}/${score?.w ?? '0'} (${score[0]?.o ?? '0'})`;

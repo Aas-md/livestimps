@@ -1,39 +1,37 @@
-import { fetchScore,  } from "./api.js"
+import { fetchScore, } from "./api.js"
 import { renderScoreData } from "./render.js"
-
-
-let btnBatting = document.querySelector('#btn-batting')
-let btnBowling = document.querySelector('#btn-bowling')
-let battingSsection = document.querySelector('#batting-section')
-let bowlingSection = document.querySelector('#bowling-section')
+import { setupBattingBowlingToggle, setupTeamsToggle } from "../Utils/handleBtnTogle.js";
 
 
 
-btnBatting.addEventListener('click', () => {
+setupTeamsToggle(
+    document.querySelector('#btn-team1'),
+    document.querySelector('#btn-team2'),
+    document.querySelector('#team1-section'),
+    document.querySelector('#team2-section')
+)
 
-    battingSsection.classList.remove('hide')
-    bowlingSection.classList.add('hide')
+setupBattingBowlingToggle(
+    document.querySelector('#btn-batting-1'),
+    document.querySelector('#btn-bowling-1'),
+    document.querySelector('#batting-section-1'),
+    document.querySelector('#bowling-section-1')
+)
 
-    btnBatting.classList.add('active')
-    btnBowling.classList.remove('active')
-
-})
-
-btnBowling.addEventListener('click', () => {
-    bowlingSection.classList.remove('hide')
-    battingSsection.classList.add('hide')
-
-    btnBowling.classList.add('active')
-    btnBatting.classList.remove('active')
-})
-
+setupBattingBowlingToggle(
+    document.querySelector('#btn-batting-2'),
+    document.querySelector('#btn-bowling-2'),
+    document.querySelector('#batting-section-2'),
+    document.querySelector('#bowling-section-2')
+)
 
 
 let btnMain = document.querySelector('#btnMain');
 
-btnMain.addEventListener("click", async() => {
-    let scoreData =await fetchScore()
-    
+btnMain.addEventListener("click", async () => {
+    let scoreData = await fetchScore()
+   
+
     renderScoreData(scoreData)
-    
+
 })

@@ -81,76 +81,63 @@
 
         </div> <!--  Score box ends here -->
 
-        <div class="scorecard-box">
+        <!-- teams section batsman and bowlers score-->
+
+        <div class="team-tabs">
+            <button class="active disable" id="btn-team1">India</button>
+            <button class="disable" id="btn-team2">Australia</button>
+        </div>
+
+        <hr>
+
+        <div class="scorecard-box" id="team1-section">
 
 
             <div class="tabs">
-                <button id="btn-batting" class="active disable">Batting</button>
-                <button id="btn-bowling" class="hidden disable">Bowling</button>
+                <button id="btn-batting-1" class="active disable">Batting</button>
+                <button id="btn-bowling-1" class="disable">Bowling</button>
 
             </div>
 
-            <div class="scorecard-section" id="batting-section">
+            <div class="scorecard-section" id="batting-section-1">
                 <table>
-                    <tr>
-                        <th>Batsman</th>
-                        <th>R</th>
-                        <th>B</th>
-                        <th>4s</th>
-                        <th>6s</th>
-                        <th>SR</th>
-                        <th>Status</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Batsman</th>
+                            <th>R</th>
+                            <th>B</th>
+                            <th>4s</th>
+                            <th>6s</th>
+                            <th>SR</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
 
-                    <div >
-                    <tr>
-                        <td>
-                            <div class="player-info">
-                                <div> <img src="../assets/india.png" alt="img" height="24px" width="24px"> </div>
-                                <div class="player-name"> <span>Virat Kohli</span> <span>Not Out</span></div>
-                            </div>
-                        </td>
-                        <td>107</td>
-                        <td>98</td>
-                        <td>9</td>
-                        <td>2</td>
-                        <td>109.81</td>
-                        <td>Not out</td>
+                    <tbody id="batting-data-1">
 
-                    </tr>
-                    
-                    </div>
+                    </tbody>
+
+
                 </table>
             </div> <!-- batting section ends here -->
 
-            <div class="scorecard-section hide" id="bowling-section">
+            <div class="scorecard-section hide" id="bowling-section-1">
                 <table>
-                    <tr>
-                        <th>Bowler</th>
-                        <th>O</th>
-                        <th>M</th>
-                        <th>R</th>
-                        <th>W</th>
-                        <th>Econ</th>
+                    <thead>
+                        <tr>
+                            <th>Bowler</th>
+                            <th>O</th>
+                            <th>M</th>
+                            <th>R</th>
+                            <th>W</th>
+                            <th>Econ</th>
 
-                        <th>6s</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="player-info">
-                                <div> <img src="../assets/australia.png" alt="img" > </div>
+                            <th>6s</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bowling-data-1">
 
-                                <div class="player-name"> <span>Starc</span> <span>Left arm</span> </div>
-                            </div>
-                        </td>
-                        <td>107</td>
-                        <td>98</td>
-                        <td>9</td>
-                        <td>2</td>
-                        <td>109.81</td>
-                        <td>Not out</td>
-
-                    </tr>
+                    </tbody>
                 </table>
             </div>
 
@@ -158,7 +145,67 @@
 
             </div>
 
-        </div><!--  Score card box ends here -->
+        </div> <!-- scorecard team1 box of  ends here -->
+
+
+
+        <div class="scorecard-box hide" id="team2-section">
+
+
+            <div class="tabs">
+                <button id="btn-batting-2" class="active disable">Batting</button>
+                <button id="btn-bowling-2" class="disable">Bowling</button>
+
+            </div>
+
+            <div class="scorecard-section" id="batting-section-2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Batsman</th>
+                            <th>R</th>
+                            <th>B</th>
+                            <th>4s</th>
+                            <th>6s</th>
+                            <th>SR</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="batting-data-2">
+
+                    </tbody>
+
+
+                </table>
+            </div> <!-- batting section ends here -->
+
+            <div class="scorecard-section hide" id="bowling-section-2">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bowler</th>
+                            <th>O</th>
+                            <th>M</th>
+                            <th>R</th>
+                            <th>W</th>
+                            <th>Econ</th>
+
+                            <th>6s</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bowling-data-2">
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+
+            </div>
+
+        </div> <!-- score card section of team ends here -->
 
         <button id="btnMain" style="margin-bottom: 2rem;">hit Api</button>
 
@@ -170,3 +217,39 @@
 </body>
 
 </html>
+
+
+<!-- <tr>
+                            <td>
+                                <div class="player-info">
+                                    <div> <img src="../assets/australia.png" alt="img"> </div>
+
+                                    <div class="player-name"> <span>Starc</span> <span>Left arm</span> </div>
+                                </div>
+                            </td>
+                            <td>107</td>
+                            <td>98</td>
+                            <td>9</td>
+                            <td>2</td>
+                            <td>109.81</td>
+                            <td>Not out</td>
+
+                        </tr> -->
+
+
+
+<!-- <tr>
+   <td>
+                                <div class="player-info">
+                                    <div> <img src="../assets/india.png" alt="img" height="24px" width="24px"> </div>
+                                    <div class="player-name"> <span>Virat Kohli</span> <span>Not Out</span></div>
+                                </div>
+                            </td>
+                            <td>107</td>
+                            <td>98</td>
+                            <td>9</td>
+                            <td>2</td>
+                            <td>109.81</td>
+                            <td>Not out</td>
+
+                        </tr> -->
