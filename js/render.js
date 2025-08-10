@@ -1,4 +1,4 @@
-
+import { getDobAndAge } from "./utils.js";
 
 export function renderMatches(matches) {
 
@@ -87,9 +87,9 @@ function renderScorecards(data) {
 
 
 
-    console.log("inside the render score card section")
+    
     let team1BattingHTML = data.team1.batting?.map(player => `
-        <tr>
+        <tr class="player-row" data-id="${player.id}">
             <td>
                 <div class="player-info">
                     <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
@@ -109,7 +109,7 @@ function renderScorecards(data) {
     `).join('');
 
     let team1BowlingHTML = data.team1.bowling?.map(player => `
-        <tr>
+        <tr class="player-row" data-id="${player.id}">
             <td>
                 <div class="player-info">
                     <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
@@ -129,7 +129,7 @@ function renderScorecards(data) {
     `).join('');
 
     let team2BattingHTML = data.team2.batting?.map(player => `
-        <tr>
+        <tr class="player-row" data-id="${player.id}">
             <td>
                 <div class="player-info">
                     <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
@@ -150,7 +150,7 @@ function renderScorecards(data) {
 
 
     let team2BowlingHTML = data.team2.bowling?.map(player => `
-        <tr>
+        <tr class="player-row" data-id="${player.id}">
             <td>
                 <div class="player-info">
                     <div><img src="${player.img}" alt="img" height="24" width="24" style="border-radius:50%;"></div>
@@ -180,6 +180,40 @@ function renderScorecards(data) {
     bowlingData1.innerHTML = team1BowlingHTML
     battingData2.innerHTML = team2BattingHTML
     bowlingData2.innerHTML = team2BowlingHTML
+
+    // player click and navigation
+
+    document.addEventListener('click', (e) => {
+    const row = e.target.closest('.player-row');
+    if (!row) return; // agar click player-row pe nahi hua
+    let id = row.getAttribute('data-id')
+    console.log('Player ID:', row.getAttribute('data-id'))
+     window.location.href = `../public/profile.html?id=${id}`
+})
+
+}
+
+export function renderprofile(player){
+
+    let img = document.querySelector('img')
+    let name = document.querySelector('h6')
+    let country1 = document.getElementById('country')
+    let dob = document.querySelector('.born span:last-child')
+    let country2 = document.querySelector('.country span:last-child')
+    let role = document.querySelector('.role span:last-child')
+    let batStyle = document.querySelector('.bat-style span:last-child')
+    let bowlStyle = document.querySelector('.bowl-style span:last-child')
+
+    img.src = player.img;
+    img.alt = player.name;
+    name.innerText = player.name;
+    country1.innerText = player.country;  // for the element with id=country
+    dob.innerText = getDobAndAge(player.dob)
+    country2.innerText = player.country;  // for the span in .country
+    role.innerText = player.role;
+    batStyle.innerText = player.batStyle;
+    bowlStyle.innerText = player.bowlStyle;
+
 
 
 }

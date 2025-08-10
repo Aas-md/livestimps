@@ -108,6 +108,49 @@ function getRandomImage() {
 }
 
 
+export function makePlayerProfileObj(data){
+
+    const playerInfo = {
+
+        name : data.name,
+        country : data.country,
+        dob : data.dateOfBirth,
+        role : data.role,
+        batStyle : data.battingStyle,
+        bowlStyle : data.bowlingStyle,
+        img : data.playerImg,
+
+    }
+
+    return playerInfo
+}
+
+
+export function getDobAndAge(dobString) {
+    let dob = new Date(dobString);
+
+    // Format DOB
+    let options = { day: '2-digit', month: 'long', year: 'numeric' };
+    let dobReadable = dob.toLocaleDateString('en-US', options);
+
+    // Calculate Age
+    let today = new Date();
+    let age = today.getFullYear() - dob.getFullYear();
+    let monthDiff = today.getMonth() - dob.getMonth();
+    let dayDiff = today.getDate() - dob.getDate();
+
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+    }
+
+    return `${dobReadable} (${age} years)`;
+}
+
+// Example
+console.log(getDobAndAge("1996-08-22T00:00:00"));
+// "22 August 1996 (29 years)"
+
+
 
 // function getRandomImage(){
 

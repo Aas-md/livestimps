@@ -1,4 +1,4 @@
-import { scoreObj } from "./utils.js"
+import { scoreObj,makePlayerProfileObj } from "./utils.js"
 
 export async function fetchLiveMatches() {
 
@@ -55,6 +55,20 @@ export async function fetchScore(match_id) {
 }
 
 
+export async function fetchPlayerInfo(player_id){
+
+   let BASE_URL =  'https://api.cricapi.com/v1/players_info'
+    let API_KEY = 'ef25db60-2ba9-4013-9baa-379a453f48ec'
+    let URL = `${BASE_URL}?apikey=${API_KEY}&offset=0&id=${player_id}`
+
+    let res = await fetch(URL)
+    let data = await res.json()
+  
+   let playerInfo = makePlayerProfileObj(data.data)
+
+   return playerInfo;
+
+}
 
 
 
@@ -62,6 +76,7 @@ export async function fetchScore(match_id) {
 
 
 
+//  https://api.cricapi.com/v1/players_info?apikey=ef25db60-2ba9-4013-9baa-379a453f48ec&offset=0&id=16592242-ef26-45d9-bf23-fc090e90fbbe
 
 
-// let temp = "https://api.cricapi.com/v1/match_scorecard?apikey=92155edc-b3f5-4aa7-a479-b1926bb976ed&offset=0&id=0b12f428-98ab-4009-831d-493d325bc555"
+
