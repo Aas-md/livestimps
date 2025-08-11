@@ -1,6 +1,14 @@
-import { getDobAndAge } from "./utils.js";
+import { getDobAndAge } from "../Utils/stringUtils.js";
+import { showErrorUI, logError } from "../Utils/Exception.js";
 
 export function renderMatches(matches) {
+
+
+    if (!Array.isArray(matches) || matches.length === 0) {
+        logError('Mathes may be undefine or 0 length', 'Lender Live Mathes Function')
+        showErrorUI('There are no Live mathes at the moment', '#mathes');
+        return;
+    }
 
     const container = document.querySelector('.cards');
     container.innerHTML = '';
@@ -38,7 +46,7 @@ export function renderMatches(matches) {
     </div>
   `;
 
-      
+
         card.addEventListener('click', () => {
             window.location.href = `../public/score.html?id=${match.id}`;
         });
@@ -49,7 +57,13 @@ export function renderMatches(matches) {
 
 export function renderScoreData(data) {
 
+    if(!data || data == {}){
+          
+        logError('matchScore card is undefined or  may be empty', 'Lender Live scorecard Function')
+        showErrorUI('Some thign went wrong please try again after some time', '#error');
+        return;
 
+    }
     document.querySelector('.matchInfo h1').textContent = `${data.name}`;
 
     document.querySelector('.matchInfo .box:nth-child(2) span:last-child').textContent = data.venue;
@@ -87,7 +101,7 @@ function renderScorecards(data) {
 
 
 
-    
+
     let team1BattingHTML = data.team1.batting?.map(player => `
         <tr class="player-row" data-id="${player.id}">
             <td>
@@ -184,16 +198,24 @@ function renderScorecards(data) {
     // player click and navigation
 
     document.addEventListener('click', (e) => {
-    const row = e.target.closest('.player-row');
-    if (!row) return; // agar click player-row pe nahi hua
-    let id = row.getAttribute('data-id')
-    console.log('Player ID:', row.getAttribute('data-id'))
-     window.location.href = `../public/profile.html?id=${id}`
-})
+        const row = e.target.closest('.player-row');
+        if (!row) return; // agar click player-row pe nahi hua
+        let id = row.getAttribute('data-id')
+        console.log('Player ID:', row.getAttribute('data-id'))
+        window.location.href = `../public/profile.html?id=${id}`
+    })
 
 }
 
-export function renderprofile(player){
+export function renderprofile(player) {
+
+      if(!player || player == {}){
+          
+        logError('player  is undefined or  may be empty obj', 'Lender player info Function')
+        showErrorUI('Soe thign went wrong please try again after some time', '#error');
+        return;
+
+    }
 
     let img = document.querySelector('img')
     let name = document.querySelector('h6')

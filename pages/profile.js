@@ -8,6 +8,7 @@ function getPlayerId() {
 
 let btn = document.querySelector('button')
 
+
 btn.addEventListener('click', async () => {
     let playerId = getPlayerId()
     console.log('player id -> ', playerId)
